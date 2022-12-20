@@ -90,7 +90,23 @@ $hotels = [
             }else{
                 echo "<i class='fa-solid fa-xmark'></i>"; 
             } ?></td>
-            <td class="text-center"><?php echo $hotel["vote"] ?></td>
+            <td class="text-center"><?php echo $hotel["vote"] ?>
+              <?php
+              for($i = 0; $i < $hotel["vote"]; $i++){
+                echo "<i class=fa-star fa-solid";
+              }
+              
+              ?>
+              <!-- <?php 
+              for($i = 0; $i<5; $i++ ){
+                if($i < $hotel["vote"]){
+                echo '<i class=fa-star fa-solid';
+            } else
+                echo '<i class=fa-star fa-regular';
+              }
+
+              ?> -->
+            </td>
             <td class="text-center"><?php echo $hotel["distance_to_center"] ?></td>
         </tr>
         <?php
@@ -103,6 +119,11 @@ $hotels = [
 
     </div>
 </body>
+
+
+              
+              
+
 
 
 
