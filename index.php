@@ -54,7 +54,6 @@ $hotels = [
   <!-- Third party libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 
   <!-- Custom css -->
@@ -86,28 +85,22 @@ $hotels = [
             <td class="text-center"><?php echo $hotel["name"] ?></td>
             <td class="text-center"><?php echo $hotel["description"] ?></td>
             <td class="text-center"><?php if($hotel["parking"]){
-            echo "<i class='fa-solid fa-check'></i>";
+            echo "<i class='fa-solid fa-check text-success'></i>";
             }else{
-                echo "<i class='fa-solid fa-xmark'></i>"; 
+                echo "<i class='fa-solid fa-xmark text-danger'></i>"; 
             } ?></td>
-            <td class="text-center"><?php echo $hotel["vote"] ?>
-              <?php
-              for($i = 0; $i < $hotel["vote"]; $i++){
-                echo "<i class=fa-star fa-solid";
-              }
-              
-              ?>
-              <!-- <?php 
+            <td class="text-center">
+              <?php 
               for($i = 0; $i<5; $i++ ){
                 if($i < $hotel["vote"]){
-                echo '<i class=fa-star fa-solid';
+                echo "<i class='fa-star fa-solid text-warning'></i>";
             } else
-                echo '<i class=fa-star fa-regular';
+                echo "<i class='fa-star fa-regular'></i>";
               }
 
-              ?> -->
+              ?>
             </td>
-            <td class="text-center"><?php echo $hotel["distance_to_center"] ?></td>
+            <td class="text-center"><?php echo $hotel["distance_to_center"] ?> km</td>
         </tr>
         <?php
         }
