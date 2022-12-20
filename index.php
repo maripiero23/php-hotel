@@ -54,6 +54,8 @@ $hotels = [
   <!-- Third party libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 
   <!-- Custom css -->
   <link rel="stylesheet" href="css/style.css">
@@ -83,7 +85,11 @@ $hotels = [
         <tr>
             <td class="text-center"><?php echo $hotel["name"] ?></td>
             <td class="text-center"><?php echo $hotel["description"] ?></td>
-            <td class="text-center"><?php echo $hotel["parking"] ?></td>
+            <td class="text-center"><?php if($hotel["parking"]){
+            echo "<i class='fa-solid fa-check'></i>";
+            }else{
+                echo "<i class='fa-solid fa-xmark'></i>"; 
+            } ?></td>
             <td class="text-center"><?php echo $hotel["vote"] ?></td>
             <td class="text-center"><?php echo $hotel["distance_to_center"] ?></td>
         </tr>
